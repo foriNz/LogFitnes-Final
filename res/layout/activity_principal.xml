@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Activities.Principal">
 
     <androidx.appcompat.widget.Toolbar
@@ -33,13 +34,17 @@
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
-        android:id="@+id/tv_fecha"
+        android:id="@+id/tv_fecha_pp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FECHA ACTUAL" />
+        android:text="FECHA ACTUAL"
+        android:layout_gravity="center"
+        android:padding="5sp"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLista_ejercicios"
-        android:layout_width="385dp"
-        android:layout_height="658dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5sp"/>
 </LinearLayout>
