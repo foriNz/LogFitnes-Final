@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.CreacionSerie">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSeries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        >
+        <Button
+            android:id="@+id/btn_atras_NS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:drawableStart="@drawable/outline_atras" />
+
+        <TextView
+            android:id="@+id/tv_nombreEjercicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/white"/>
+    </androidx.appcompat.widget.Toolbar>
+    <EditText
+        android:id="@+id/tituloReps"
+        android:layout_width="387dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Repeticiones"
+        app:layout_constraintBottom_toTopOf="@+id/botonesReps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarSeries" />
+    <LinearLayout
+        android:id="@+id/botonesReps"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tituloCarga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloReps"
+        app:layout_constraintVertical_bias="0.233">
+
+        <Button
+            android:id="@+id/decrementoReps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="10dp"
+            android:text="-" />
+
+        <EditText
+            android:id="@+id/numeroReps"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="1dp"
+            android:ems="10"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/incrementoReps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="40dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/tituloCarga"
+        android:layout_width="388dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Carga(kgs)"
+        app:layout_constraintBottom_toTopOf="@+id/botonesCarga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonesReps" />
+
+    <LinearLayout
+        android:id="@+id/botonesCarga"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/botonesFuncionabilidad"
+        app:layout_constraintTop_toBottomOf="@+id/tituloCarga"
+        app:layout_constraintVertical_bias="0.5"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/decrementoCarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="10dp"
+            android:text="-" />
+
+        <EditText
+            android:id="@+id/numeroCarga"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="1dp"
+            android:ems="10"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/incrementoCarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="40dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_serienormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="normal" />
+
+        <RadioButton
+            android:id="@+id/rb_calentamiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="calentamiento" />
+
+        <RadioButton
+            android:id="@+id/rb_dropset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dropset" />
+    </RadioGroup>
+    <LinearLayout
+        android:id="@+id/botonesFuncionabilidad"
+        android:layout_width="409dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/botonesCarga"
+        tools:layout_editor_absoluteX="2dp">
+
+        <Button
+            android:id="@+id/agregarSerie"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Agregar" />
+
+        <Button
+            android:id="@+id/limpiar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Limpiar valores" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tablaSeries"
+        android:layout_width="333dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonesFuncionabilidad"
+        app:layout_constraintVertical_bias="0.285"/>
+
+</LinearLayout>

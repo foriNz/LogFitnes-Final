@@ -12,7 +12,13 @@
         android:theme="@style/Theme.LogFitness"
         tools:targetApi="31">
         <activity
-            android:name=".Principal"
+            android:name=".CreacionSerie"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.BuscadorEjercicio"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Principal"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
