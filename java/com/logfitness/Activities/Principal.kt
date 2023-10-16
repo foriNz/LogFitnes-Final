@@ -15,7 +15,6 @@ import com.logfitness.R
 
 class Principal (): AppCompatActivity() {
 
-    //var adapter : ListaEjerciciosAdapter_PP?
 
 
 

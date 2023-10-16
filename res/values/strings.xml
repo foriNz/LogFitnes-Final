@@ -12,4 +12,18 @@
     <string name="tv_colores_categoria_eleccion">Elige un color para la categoría</string>
     <string name="cb_ejercicio_compuesto">Ejercicio compuesto</string>
     <string name="tv_ejercicio_padre">Ejercicio padre</string>
+    <string name="abreviatura_lunes">Lun</string>
+    <string name="abreviatura_martes">Mar</string>
+    <string name="abreviatura_miercoles">Mie</string>
+    <string name="abreviatura_jueves">Jue</string>
+    <string name="abreviatura_viernes">Vie</string>
+    <string name="abreviatura_sabado">Sab</string>
+    <string name="abreviatura_domingo">Dom</string>
+    <string name="total_entrenamientos">Entrenamientos</string>
+    <string name="total_ejercicios">Ejercicios totales</string>
+    <string name="media_sets_dia">Media sets por dia</string>
+    <string name="media_ejercicios_dia">Media ejercicios por dia</string>
+    <string name="set_totales">Sets totales</string>
+    <string name="dropsets_totales">Dropsets totales</string>
+    <string name="total">Todo el historial</string>
 </resources>
