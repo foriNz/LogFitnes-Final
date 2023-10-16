@@ -26,16 +26,17 @@
             android:text=""
             android:textColor="@color/white"/>
     </androidx.appcompat.widget.Toolbar>
-    <EditText
+    <TextView
         android:id="@+id/tituloReps"
-        android:layout_width="387dp"
-        android:layout_height="47dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textSize="20sp"
         android:text="Repeticiones"
         app:layout_constraintBottom_toTopOf="@+id/botonesReps"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +45,8 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbarSeries" />
     <LinearLayout
         android:id="@+id/botonesReps"
-        android:layout_width="411dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/tituloCarga"
@@ -80,15 +82,16 @@
 
     </LinearLayout>
 
-    <EditText
+    <TextView
         android:id="@+id/tituloCarga"
-        android:layout_width="388dp"
-        android:layout_height="47dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:textSize="20sp"
         android:inputType="textPersonName"
         android:text="Carga(kgs)"
         app:layout_constraintBottom_toTopOf="@+id/botonesCarga"
@@ -102,6 +105,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="8dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/botonesFuncionabilidad"
         app:layout_constraintTop_toBottomOf="@+id/tituloCarga"
         app:layout_constraintVertical_bias="0.5"
@@ -132,38 +136,62 @@
             android:text="+" />
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/tituloSets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+android:layout_marginBottom="8dp"
 
+        android:textSize="20sp"
+        android:text="Set"
+   />
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <RadioButton
             android:id="@+id/rb_serienormal"
-            android:layout_width="wrap_content"
+            android:background="@drawable/custom_radio_selector"
+android:layout_marginRight="10dp"
             android:layout_height="wrap_content"
-            android:text="normal" />
+            android:layout_width="110dp"
+            android:button="@color/transparent"
+            android:gravity="center"
+            android:text="@string/normal" />
 
         <RadioButton
             android:id="@+id/rb_calentamiento"
-            android:layout_width="wrap_content"
+            android:background="@drawable/custom_radio_selector"
+            android:layout_marginRight="10dp"
+            android:layout_width="110dp"
+            android:gravity="center"
             android:layout_height="wrap_content"
-            android:text="calentamiento" />
+            android:button="@color/transparent"
+            android:text="@string/calentamiento" />
 
         <RadioButton
             android:id="@+id/rb_dropset"
-            android:layout_width="wrap_content"
+            android:background="@drawable/custom_radio_selector"
+
             android:layout_height="wrap_content"
-            android:text="dropset" />
+            android:gravity="center"
+            android:layout_width="110dp"
+            android:button="@color/transparent"
+            android:text="@string/dropset" />
     </RadioGroup>
+
     <LinearLayout
         android:id="@+id/botonesFuncionabilidad"
-        android:layout_width="409dp"
-        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/botonesCarga"
-        tools:layout_editor_absoluteX="2dp">
+>
 
         <Button
             android:id="@+id/agregarSerie"
@@ -178,12 +206,34 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Limpiar valores" />
+
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/borrarSerie"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Borrar"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/actualizarSerie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Actualizar"
+            android:visibility="invisible"
+            />
+    </LinearLayout>
     <TableLayout
         android:id="@+id/tablaSeries"
-        android:layout_width="333dp"
-        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

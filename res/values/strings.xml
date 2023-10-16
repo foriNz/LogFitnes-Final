@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Log Fitness</string>
     <string name="buscador">Buscador</string>
+    <string name="normal">Normal</string>
+    <string name="calentamiento">Calentamiento</string>
+    <string name="dropset">Dropset</string>
 </resources>
