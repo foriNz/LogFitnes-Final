@@ -4,4 +4,8 @@
     <string name="normal">Normal</string>
     <string name="calentamiento">Calentamiento</string>
     <string name="dropset">Dropset</string>
+    <string name="hint_buscador_ejercicio_padre">Busca el ejercicio padre</string>
+    <string name="categoria">Categoría</string>
+    <string name="et_nombre_ejercicio">Introduce el nombre del ejercicio</string>
+    <string name="creacion_ejercicio">Creacion de ejercicio</string>
 </resources>

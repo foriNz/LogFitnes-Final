@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.CreacionEjercicio">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+        <Button
+            android:id="@+id/btn_atras_ce"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            app:icon="@drawable/outline_atras"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/creacion_ejercicio"
+            android:textColor="@color/white"
+            android:padding="15sp"
+            android:textSize="24sp" />
+        <Button
+            android:id="@+id/btn_aceptar_ce"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            app:icon="@drawable/baseline_check_24" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_titulo_recordatorio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/et_nombre_ejercicio" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/categoria"
+        android:layout_marginLeft="20dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <Spinner
+            android:id="@+id/sp_categoria"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:drawableStart="@drawable/baseline_add"
+            app:icon="@drawable/baseline_add"/>
+    </LinearLayout>
+    <SearchView
+        android:id="@+id/sv_buscador_ejercicio_padre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        />
+    <Spinner
+        android:id="@+id/sp_ejercicio_padre"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+</LinearLayout>
