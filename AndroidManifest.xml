@@ -12,6 +12,9 @@
         android:theme="@style/Theme.LogFitness"
         tools:targetApi="31">
         <activity
+            android:name=".CreacionCategoria"
+            android:exported="false" />
+        <activity
             android:name=".CreacionEjercicio"
             android:exported="false" />
         <activity

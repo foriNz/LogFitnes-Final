@@ -8,4 +8,8 @@
     <string name="categoria">Categoría</string>
     <string name="et_nombre_ejercicio">Introduce el nombre del ejercicio</string>
     <string name="creacion_ejercicio">Creacion de ejercicio</string>
+    <string name="et_nombre_categoria">Introduce un nombre para la categoria nueva</string>
+    <string name="tv_colores_categoria_eleccion">Elige un color para la categoría</string>
+    <string name="cb_ejercicio_compuesto">Ejercicio compuesto</string>
+    <string name="tv_ejercicio_padre">Ejercicio padre</string>
 </resources>

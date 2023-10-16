@@ -11,19 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary">
+
         <Button
             android:id="@+id/btn_atras_ce"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            app:icon="@drawable/outline_atras"/>
+            app:icon="@drawable/outline_atras" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="15sp"
             android:text="@string/creacion_ejercicio"
             android:textColor="@color/white"
-            android:padding="15sp"
             android:textSize="24sp" />
+
         <Button
             android:id="@+id/btn_aceptar_ce"
             style="@style/Widget.MaterialComponents.Button.Icon"
@@ -48,11 +51,13 @@
 
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/categoria"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="20dp"
+        android:text="@string/categoria" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,29 +68,59 @@
             android:id="@+id/sp_categoria"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
             android:layout_marginLeft="20dp"
-            />
+            android:layout_marginRight="20dp"
+            android:layout_weight="1" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight=".6"
             android:drawableStart="@drawable/baseline_add"
-            app:icon="@drawable/baseline_add"/>
+            app:icon="@drawable/baseline_add" />
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="@string/tv_ejercicio_padre" />
     <SearchView
         android:id="@+id/sv_buscador_ejercicio_padre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        />
+        android:layout_marginBottom="20dp" />
+
     <Spinner
         android:id="@+id/sp_ejercicio_padre"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/cb_ejercicio_compuesto" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            app:icon="@drawable/baseline_help"/>
+
+    </LinearLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"/>
 </LinearLayout>
