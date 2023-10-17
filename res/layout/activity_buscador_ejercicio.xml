@@ -15,19 +15,19 @@
 
         <Button
             android:id="@+id/btn_nuevoEjercicio_BE"
-            style="@style/Widget.MaterialComponents.Button.Icon"
-            android:layout_width="wrap_content"
+
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:drawableStart="@drawable/baseline_add" />
+            app:icon="@drawable/baseline_add" />
 
         <Button
             android:id="@+id/btn_atras_BE"
             style="@style/Widget.MaterialComponents.Button.Icon"
-            android:layout_width="wrap_content"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:drawableStart="@drawable/outline_atras" />
+            app:icon="@drawable/outline_atras" />
 
         <TextView
             android:layout_width="wrap_content"

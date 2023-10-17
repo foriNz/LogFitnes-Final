@@ -84,14 +84,24 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:text="@string/tv_ejercicio_padre" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
     <SearchView
         android:id="@+id/sv_buscador_ejercicio_padre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp" />
 
+        android:layout_weight="1"
+     />
+    <Button
+        android:id="@+id/btn_ayuda_ejercicio_padre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".6"
+        app:icon="@drawable/baseline_help"/>
+    </LinearLayout>
     <Spinner
         android:id="@+id/sp_ejercicio_padre"
         android:layout_width="match_parent"
@@ -113,6 +123,7 @@
             android:layout_weight="1"
             android:text="@string/cb_ejercicio_compuesto" />
         <Button
+            android:id="@+id/btn_ayuda_ejercicio_compuesto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight=".6"
