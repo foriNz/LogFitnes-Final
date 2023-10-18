@@ -26,22 +26,22 @@ open class BBDDHelper(
         )
 
         sqLiteDatabase.execSQL(
-            ("CREATE TABLE " + TABLA_EJERCICIOS + "(" +
+            ("CREATE TABLE $TABLA_EJERCICIOS (" +
                     "nombre_BD TEXT PRIMARY KEY," +
                     "nombre_IU TEXT NOT NULL," +
                     "categoria TEXT NOT NULL," +
                     "padre TEXT)")
         )
         sqLiteDatabase.execSQL(
-            ("CREATE TABLE " + TABLA_SERIES + "(" +
-                    "posicion NUMERIC NOT NULL, " +
+            ("CREATE TABLE $TABLA_SERIES (" +
+                    "id NUMERIC NOT NULL, " +
                     "fecha INTEGER NOT NULL, " +
                     "nombre_ejercicio TEXT NOT NULL, " +
                     "puesto_lista INTEGER NOT NULL, " +
                     "reps INTEGER NOT NULL, " +
                     "lastre NUMERIC NOT NULL, " +
                     "asistidas INTEGER NOT NULL, " +
-                    "PRIMARY KEY(posicion, fecha, nombre_ejercicio))")
+                    "PRIMARY KEY(id, fecha, nombre_ejercicio))")
         )
     }
 
