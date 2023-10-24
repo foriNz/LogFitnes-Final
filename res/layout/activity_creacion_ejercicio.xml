@@ -44,7 +44,7 @@
         android:padding="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_titulo_recordatorio"
+            android:id="@+id/et_titulo_ejercicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/et_nombre_ejercicio" />
@@ -73,6 +73,7 @@
             android:layout_weight="1" />
 
         <Button
+            android:id="@+id/btn_nueva_categoria_CE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight=".6"
@@ -88,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp">
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/sv_buscador_ejercicio_padre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -117,6 +118,7 @@
         android:padding="20dp">
 
         <CheckBox
+            android:id="@+id/cb_ejercicio_compuesto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -131,6 +133,7 @@
 
     </LinearLayout>
     <TableLayout
+        android:id="@+id/tl_ejercicios_compuestos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"/>

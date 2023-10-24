@@ -26,4 +26,6 @@
     <string name="set_totales">Sets totales</string>
     <string name="dropsets_totales">Dropsets totales</string>
     <string name="total">Todo el historial</string>
+    <string name="crear_categoria">Nueva categoría</string>
+    <string name="tv_colores_categoria_eleccion_seleccionado">Color seleccionado</string>
 </resources>
