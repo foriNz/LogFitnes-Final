@@ -2,12 +2,12 @@ package com.logfitness.Activities.Dialogos
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatDialogFragment
+import com.logfitness.Activities.CreacionEjercicio
 import com.logfitness.BBDD.BDCategorias
 import com.logfitness.Entidades.Categoria
 import com.logfitness.R
@@ -31,7 +31,7 @@ class CreacionCategoria: AppCompatDialogFragment() {
             var cat : Categoria = Categoria(nombre_categoria.text.toString(), color!!)
             bd.addCategoria(cat)
             dismiss()
-
+            (context as CreacionEjercicio).refrescarSpinnerCategorias()
         }
         return builder.create()
     }
