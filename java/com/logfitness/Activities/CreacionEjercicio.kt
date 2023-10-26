@@ -2,14 +2,22 @@ package com.logfitness.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.ProgressBar
 import android.widget.Spinner
 import android.widget.TableLayout
+import android.widget.TextView
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.get
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.logfitness.Activities.Dialogos.CreacionCategoria
 import com.logfitness.BBDD.BDCategorias
 import com.logfitness.Entidades.Categoria
@@ -19,12 +27,13 @@ class CreacionEjercicio : AppCompatActivity() {
     var dialogo_nueva_categoria: CreacionCategoria? = null
     var editText: EditText? = null
     var spinner_categoria: Spinner? = null
-
+    var rv_ejercicios_compuestos: RecyclerView? = null
     var ayuda_ejercicio_padre: Button? = null
     var spinner_ejercicio_padre: Spinner? = null
     var ejercicio_compuesto: CheckBox? = null
     var ayuda_ejercicio_compuesto: Button? = null
-    var ejercicios_compuestos: TableLayout? = null
+
+    var al_ejercicios_compuestos : MutableList<Categoria> = emptyList<Categoria>().toMutableList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_creacion_ejercicio)
@@ -34,12 +43,22 @@ class CreacionEjercicio : AppCompatActivity() {
         spinner_categoria = findViewById(R.id.sp_categoria)
         val nueva_categoria: Button = findViewById(R.id.btn_nueva_categoria_CE)
         ayuda_ejercicio_padre = findViewById(R.id.btn_ayuda_ejercicio_padre)
+        rv_ejercicios_compuestos = findViewById(R.id.rv_ejercicios_compuestos)
         spinner_ejercicio_padre = findViewById(R.id.sp_ejercicio_padre)
         ejercicio_compuesto = findViewById(R.id.cb_ejercicio_compuesto)
         ayuda_ejercicio_compuesto = findViewById(R.id.btn_ayuda_ejercicio_compuesto)
-        ejercicios_compuestos = findViewById(R.id.tl_ejercicios_compuestos)
+        ejercicio_compuesto!!.setOnClickListener {
+            if (ejercicio_compuesto!!.isSelected) {
+                rv_ejercicios_compuestos!!.layoutManager =
+                    LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+                var array : MutableList<Categoria> = emptyList<Categoria>().toMutableList()
+                array.add(Categoria(spinner_categoria!!.selectedItem.toString(),))
 
-        nueva_categoria.setOnClickListener({ abrirNuevaCategoria() })
+
+
+            }
+        }
+        nueva_categoria.setOnClickListener { abrirNuevaCategoria() }
         refrescarSpinnerCategorias()
     }
 

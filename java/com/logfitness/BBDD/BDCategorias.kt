@@ -39,4 +39,17 @@ class BDCategorias(val contexto : Context): BBDDHelper(contexto) {
         cursorCategoria.close()
         return categorias
     }
+    fun getColor(nombre_categoria : String) : String {
+        val bd : SQLiteDatabase = helper.readableDatabase
+        var resultado : String = ""
+        val cursorCategoria = bd.rawQuery(
+            "SELECT * FROM $TABLA_CATEGORIAS WHERE nombre_BD = \'"+ nombre_categoria.trim().lowercase()+"\'",
+            null
+        )
+        if (cursorCategoria.moveToFirst())
+                resultado = cursorCategoria.getString(2)
+
+        bd.close()
+        return resultado
+    }
 }
