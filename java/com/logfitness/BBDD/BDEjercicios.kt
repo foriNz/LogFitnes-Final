@@ -13,8 +13,8 @@ class BDEjercicios (val contexto : Context): BBDDHelper(contexto) {
             val values = ContentValues()
             values.put("nombre_BD", ejercicio.nombre_BD)
             values.put("nombre_IU", ejercicio.nombreIU)
-            values.put("categoria", ejercicio.categoria)
             values.put("padre", ejercicio.padre)
+            values.put("categoria", ejercicio.categoria)
             bd.insert(TABLA_EJERCICIOS, null, values)
         } catch (e: Exception) {
             e.toString()

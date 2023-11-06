@@ -1,5 +1,6 @@
 package com.logfitness.Activities
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,10 +18,12 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import androidx.recyclerview.widget.RecyclerView.*
 import com.logfitness.Activities.Dialogos.CreacionCategoria
+import com.logfitness.Adaptadores.EjerciciosCompuestosAdapter_CEjercicio
 import com.logfitness.BBDD.BDCategorias
 import com.logfitness.Entidades.Categoria
+import com.logfitness.Entidades.EjercicioCompuesto
 import com.logfitness.R
 
 class CreacionEjercicio : AppCompatActivity() {
@@ -32,6 +35,7 @@ class CreacionEjercicio : AppCompatActivity() {
     var spinner_ejercicio_padre: Spinner? = null
     var ejercicio_compuesto: CheckBox? = null
     var ayuda_ejercicio_compuesto: Button? = null
+    var nuevo_ejercicio_compuesto: Button? = null
 
     var al_ejercicios_compuestos : MutableList<Categoria> = emptyList<Categoria>().toMutableList()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,15 +51,23 @@ class CreacionEjercicio : AppCompatActivity() {
         spinner_ejercicio_padre = findViewById(R.id.sp_ejercicio_padre)
         ejercicio_compuesto = findViewById(R.id.cb_ejercicio_compuesto)
         ayuda_ejercicio_compuesto = findViewById(R.id.btn_ayuda_ejercicio_compuesto)
+        nuevo_ejercicio_compuesto = findViewById(R.id.btn_nuevo_ejercicio_compuesto)
+        nuevo_ejercicio_compuesto!!.setOnClickListener{
+
+        }
         ejercicio_compuesto!!.setOnClickListener {
-            if (ejercicio_compuesto!!.isSelected) {
+            if (ejercicio_compuesto!!.isChecked) {
+                spinner_categoria!!.visibility = (INVISIBLE)
+                nuevo_ejercicio_compuesto!!.visibility = (VISIBLE)
+                val bd : BDCategorias = BDCategorias(this)
                 rv_ejercicios_compuestos!!.layoutManager =
                     LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-                var array : MutableList<Categoria> = emptyList<Categoria>().toMutableList()
-                array.add(Categoria(spinner_categoria!!.selectedItem.toString(),))
-
-
-
+                val array : MutableList<EjercicioCompuesto> = emptyList<EjercicioCompuesto>().toMutableList()
+                //array.add(Categoria(spinner_categoria!!.selectedItem.toString(), bd.getColor(spinner_categoria!!.selectedItem.toString())))
+                rv_ejercicios_compuestos!!.adapter = EjerciciosCompuestosAdapter_CEjercicio(this, array)
+            } else {
+                spinner_categoria!!.visibility = (VISIBLE)
+                nuevo_ejercicio_compuesto!!.visibility = (INVISIBLE)
             }
         }
         nueva_categoria.setOnClickListener { abrirNuevaCategoria() }
@@ -69,7 +81,7 @@ class CreacionEjercicio : AppCompatActivity() {
         dialogo_nueva_categoria!!.show(supportFragmentManager, "dialogo_categoria")
     }
 
-    public fun refrescarSpinnerCategorias() {
+    fun refrescarSpinnerCategorias() {
         val bd = BDCategorias(this)
         val adapter =
             ArrayAdapter<Categoria>(this, android.R.layout.simple_spinner_item, bd.getCategorias())

@@ -13,6 +13,7 @@ open class BBDDHelper(
     val TABLA_EJERCICIOS = "t_ejercicios"
     val TABLA_SERIES = "t_series"
     val TABLA_CATEGORIAS = "t_categorias"
+    val TABLA_EJERCICIO_CATEGORIAS_COMPUESTOS = "t_ejercicios_compuestos"
     /*private val DATABASE_VERSION: Int = 1
     private val DATABASE_NAME: String = "usuario.db"*/
 
@@ -26,14 +27,22 @@ open class BBDDHelper(
         )
 
         sqLiteDatabase.execSQL(
-            ("CREATE TABLE $TABLA_EJERCICIOS (" +
+            "CREATE TABLE $TABLA_EJERCICIOS (" +
                     "nombre_BD TEXT PRIMARY KEY," +
                     "nombre_IU TEXT NOT NULL," +
-                    "categoria TEXT NOT NULL," +
-                    "padre TEXT)")
+                    "categoria TEXT," +
+                    "categorias_compuestas_id," +
+                    "padre TEXT)"
         )
         sqLiteDatabase.execSQL(
-            ("CREATE TABLE $TABLA_SERIES (" +
+            "CREATE TABLE $TABLA_EJERCICIO_CATEGORIAS_COMPUESTOS (" +
+                    "id NUMERIC NOT NULL PRIMARY KEY," +
+                    "categoria NOT NULL," +
+                    "porcentaje NOT NULL)"
+        )
+
+        sqLiteDatabase.execSQL(
+            "CREATE TABLE $TABLA_SERIES (" +
                     "id NUMERIC NOT NULL, " +
                     "fecha INTEGER NOT NULL, " +
                     "nombre_ejercicio TEXT NOT NULL, " +
@@ -41,7 +50,7 @@ open class BBDDHelper(
                     "reps INTEGER NOT NULL, " +
                     "lastre NUMERIC NOT NULL, " +
                     "asistidas INTEGER NOT NULL, " +
-                    "PRIMARY KEY(id, fecha, nombre_ejercicio))")
+                    "PRIMARY KEY(id, fecha, nombre_ejercicio))"
         )
     }
 
