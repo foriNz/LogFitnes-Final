@@ -36,6 +36,7 @@ class CreacionEjercicio : AppCompatActivity() {
     var ejercicio_compuesto: CheckBox? = null
     var ayuda_ejercicio_compuesto: Button? = null
     var nuevo_ejercicio_compuesto: Button? = null
+    val ejercicios_compuestos: MutableList<EjercicioCompuesto> = emptyList<EjercicioCompuesto>().toMutableList()
 
     var al_ejercicios_compuestos : MutableList<Categoria> = emptyList<Categoria>().toMutableList()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,21 +54,24 @@ class CreacionEjercicio : AppCompatActivity() {
         ayuda_ejercicio_compuesto = findViewById(R.id.btn_ayuda_ejercicio_compuesto)
         nuevo_ejercicio_compuesto = findViewById(R.id.btn_nuevo_ejercicio_compuesto)
         nuevo_ejercicio_compuesto!!.setOnClickListener{
+            // TODO: QUE LOS PORCENTAJES SUMEN 100, AL PONER UNA CATEGORIA EN SPINNER QUE NO SE VUELVA
+            //  PODER PONER LA MISMA CATEGORIA, RECOGER LOS DATOS DEL RECYCLERVIEW PARA LA INSERCION
+            //  DEL EJERCICIO EN BBDD
+            ejercicios_compuestos.add(EjercicioCompuesto("",0))
+            rv_ejercicios_compuestos!!.adapter = EjerciciosCompuestosAdapter_CEjercicio(this, ejercicios_compuestos)
 
         }
         ejercicio_compuesto!!.setOnClickListener {
             if (ejercicio_compuesto!!.isChecked) {
                 spinner_categoria!!.visibility = (INVISIBLE)
                 nuevo_ejercicio_compuesto!!.visibility = (VISIBLE)
-                val bd : BDCategorias = BDCategorias(this)
                 rv_ejercicios_compuestos!!.layoutManager =
                     LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-                val array : MutableList<EjercicioCompuesto> = emptyList<EjercicioCompuesto>().toMutableList()
-                //array.add(Categoria(spinner_categoria!!.selectedItem.toString(), bd.getColor(spinner_categoria!!.selectedItem.toString())))
-                rv_ejercicios_compuestos!!.adapter = EjerciciosCompuestosAdapter_CEjercicio(this, array)
+                rv_ejercicios_compuestos!!.adapter = EjerciciosCompuestosAdapter_CEjercicio(this, ejercicios_compuestos)
             } else {
                 spinner_categoria!!.visibility = (VISIBLE)
                 nuevo_ejercicio_compuesto!!.visibility = (INVISIBLE)
+                rv_ejercicios_compuestos!!.adapter = null
             }
         }
         nueva_categoria.setOnClickListener { abrirNuevaCategoria() }

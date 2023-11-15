@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ProgressBar
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -23,14 +24,17 @@ class EjerciciosCompuestosAdapter_CEjercicio(val contexto: Context, val listaCat
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_ejercicio_compuesto, null, false)
         return ECompuestoViewHolder(view)
     }
-
+    init {
+        if (listaCategorias.size == 0) {
+            listaCategorias.add(EjercicioCompuesto("",100))
+        }
+    }
     override fun onBindViewHolder(
         holder: ECompuestoViewHolder,
         position: Int
     ) {
         val adapter: ArrayAdapter<Categoria> = ArrayAdapter(contexto, android.R.layout.simple_spinner_item, bdCat.getCategorias());
         holder.nombre_ejercicio_compuesto.adapter = adapter
-        holder.porcentaje.setText("0")
     }
 
     override fun getItemCount(): Int {
@@ -39,7 +43,7 @@ class EjerciciosCompuestosAdapter_CEjercicio(val contexto: Context, val listaCat
     class ECompuestoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var nombre_ejercicio_compuesto = itemView.findViewById<Spinner>(R.id.sp_nombre_categoria_ejcompuesto)
         var porcentaje = itemView.findViewById<TextView>(R.id.ed_porcetaje_categoria)
-        var progressBar = itemView.findViewById<TextView>(R.id.pb_categoria)
+
 
     }
 }
