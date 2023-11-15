@@ -3,6 +3,7 @@ package com.logfitness.BBDD
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import com.logfitness.Entidades.Categoria
 import com.logfitness.Entidades.Ejercicio
 
 
@@ -20,5 +21,9 @@ class BDEjercicios (val contexto : Context): BBDDHelper(contexto) {
             e.toString()
         }
 
+    }
+    fun getEjercicios(): MutableList<Ejercicio> {
+        var resultado: MutableList<Ejercicio> = emptyList<Ejercicio>().toMutableList()
+        return resultado
     }
 }
